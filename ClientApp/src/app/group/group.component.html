@@ -1,0 +1,42 @@
+<p *ngIf="!groups?.length"><em>Yükleniyor...</em></p>
+<span class="btn btn-primary btn-xs" (click)="addGroup()">Grup Ekle</span>
+<br />
+<br />
+<table class='table table-striped table-bordered' aria-labelledby="tableLabel" *ngIf="groups.length">
+    <thead>
+        <tr>
+            <th scope="col" sortable="name">Grup Adı</th>
+            <th scope="col" sortable="code">Grup Kodu</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let group of groups">
+            <td>{{ group.name }}</td>
+            <td>{{ group.code }}</td>
+            <td>
+                <span class="btn btn-primary btn-xs">
+                    <!--(click)="editPost(item.postId)"-->
+                    <i class="bi bi-bag"></i>
+                </span>
+            </td>
+            <td>
+                <span class="btn btn-danger btn-xs">
+                    <!--(click)="deletePost(item.postId, item.title)"-->
+
+                    <span class="glyphicon glyphicon-trash"></span>
+                </span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!--<form #myForm="ngForm" (ngSubmit)="submitForm(myForm.value)">
+    <input type="text" name="name" placeholder="Grup adı" ngModel required>
+    <br />
+    <input type="text" name="code" placeholder="Grup kodu" ngModel required>
+    <br />
+    <button type="submit" [disabled]="!myForm.form.valid">Submit</button>
+    <pre>{{myForm.value | json}}</pre>
+</form>-->
