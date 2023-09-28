@@ -4,6 +4,7 @@ import { GroupService } from './../services/group.service';
 import * as AspNetData from 'devextreme-aspnet-data-nojquery';
 import { NgbModalConfig, NgbModalRef, NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { ProductService } from '../services/product.service';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product',

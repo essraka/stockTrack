@@ -35,11 +35,10 @@ import { ProductComponent } from './product/product.component';
     FormsModule,
     NgbModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
+      { path: '', component: ProductComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'stock-group', component: GroupComponent },
-      { path: 'stock-product', component: ProductComponent },
+      { path: 'stock-group', component: GroupComponent }
     ]),
   ],
   providers: [GroupService, ProductService, NgbActiveModal],
