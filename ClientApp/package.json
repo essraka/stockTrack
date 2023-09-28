@@ -28,6 +28,7 @@
     "bootstrap": "^5.2.3",
     "devextreme": "23.1.5",
     "devextreme-angular": "23.1.5",
+    "devextreme-aspnet-data-nojquery": "^3.0.0",
     "devextreme-schematics": "^1.6.0",
     "jquery": "^3.6.4",
     "oidc-client": "^1.11.5",

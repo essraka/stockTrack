@@ -1,7 +1,7 @@
 <dx-data-grid id="gridContainer"
-              [dataSource]="groups"
+              [dataSource]="products"
               keyExpr="id"
-              (onSaved)="addGroup($event)"
+              (onSaved)="saveProduct($event)"
               [allowColumnReordering]="true"
               [showBorders]="true">
     <dxo-paging [enabled]="true"></dxo-paging>
@@ -13,11 +13,20 @@
         <dxo-texts deleteRow="Sil" editRow="Düzenle" cancelRowChanges="Geri" saveRowChanges="Kaydet">
         </dxo-texts>
     </dxo-editing>
-
-    <dxi-column dataField="name" caption="Grup adı">
+    <dxi-column dataField="groupId" caption="Grup">
+        <dxo-lookup [dataSource]="groups" displayExpr="name" valueExpr="id">
+        </dxo-lookup>
+    </dxi-column>
+    <dxi-column dataField="name" caption="Ürün adı">
         <dxi-validation-rule type="required" message="Zorunlu alan"></dxi-validation-rule>
     </dxi-column>
-    <dxi-column dataField="code" caption="Grup kodu">
+    <dxi-column dataField="code" caption="Ürün kodu">
+        <dxi-validation-rule type="required" message="Zorunlu alan"></dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="price" caption="Fiyat">
+        <dxi-validation-rule type="required" message="Zorunlu alan"></dxi-validation-rule>
+    </dxi-column>
+    <dxi-column dataField="count" caption="Adet">
         <dxi-validation-rule type="required" message="Zorunlu alan"></dxi-validation-rule>
     </dxi-column>
 

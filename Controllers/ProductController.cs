@@ -61,8 +61,8 @@ namespace StockTrack.Controllers
         }
 
         // PUT api/values/5
-        [HttpPatch("{id}")]
-        public async Task<IActionResult> Patch(int id, Product product)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(int id, Product product)
         {
             if (id != product.Id)
             {

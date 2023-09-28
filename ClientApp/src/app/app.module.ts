@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +11,9 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { GroupComponent } from './group/group.component';
 import { GroupService } from './services/group.service';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DxDataGridModule, DxButtonModule } from 'devextreme-angular';
+import { ProductService } from './services/product.service';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -20,10 +23,14 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    GroupComponent
+    GroupComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserTransferStateModule,
+    DxDataGridModule,
+    DxButtonModule,
     HttpClientModule,
     FormsModule,
     NgbModule,
@@ -32,9 +39,10 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'stock-group', component: GroupComponent },
+      { path: 'stock-product', component: ProductComponent },
     ]),
   ],
-  providers: [GroupService, NgbActiveModal],
+  providers: [GroupService, ProductService, NgbActiveModal],
   bootstrap: [AppComponent]
 })
 
